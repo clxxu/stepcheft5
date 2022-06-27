@@ -1,0 +1,33 @@
+/* Padding and margin-related issues */
+
+.body {
+    color: white;
+}
+
+.bg-light {
+    background-color: #fcee54 !important;
+    color: black !important
+}
+
+.bg-aqua {
+    background-color: #4095a8
+}
+
+.bg-grey {
+    background-color: rgb(243, 243, 243);
+}
+
+.navbar-text {
+    text-align: center;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+a {
+    color: #00848c;
+    text-decoration: none !important;
+}

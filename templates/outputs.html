@@ -1,0 +1,16 @@
+<div class="col p-3">
+    {% for i in range(length): %}
+    <div class='container bg-grey p-4'>
+        <h3 class='text-center'>{{results.iloc[i]["titles"]}}</h3>
+        <hr>
+        <h5>Ingredients</h5>
+        {{results.iloc[i]["ingredients"]}}
+        <br><br>
+        <h5>Recipe</h5>
+        {{results.iloc[i]["recipes"]}}
+        <br><br>
+        <div style="text-align: right;"><i>Model: </i> {{results.iloc[i]["models"]}}</div>
+    </div>
+    <br>
+    {% endfor %}
+</div>

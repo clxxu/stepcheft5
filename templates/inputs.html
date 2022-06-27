@@ -1,0 +1,52 @@
+{% if to_generate == "recipe": %}
+
+<div class="dropdown w3-right">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Ingredients
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="generate_recipe2">Title + Ingredients</a></li>
+    </ul>
+</div>
+<br>
+<form id="generate_recipe" action='{{url_for("generate_recipe")}}' method="get">
+    <div class="form-group">
+        <label for="ingredients" style="color: white"><h5>Ingredients</h5></label>
+        <textarea class="form-control" name="ingredients" id="ingredients" rows="3" placeholder="tomatoes, marsupial, basil, pepper..." required>{{ingredients}}</textarea>
+    </div>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-light" onclick="this.disabled=true; this.form.submit();">
+        Generate Recipe
+    </button>
+</form>
+
+{% elif to_generate == "recipe2" %}
+
+<div class="dropdown w3-right">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Title + Ingredients
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="generate_recipe">Ingredients</a></li>
+    </ul>
+</div>
+<br>
+<form id="generate_recipe2" action='{{url_for("generate_recipe2")}}' method="get">
+    <div class="form-group">
+        <label for="title" style="color: white"><h5>Title</h5></label>
+        <textarea class="form-control" name="title" id="title" rows="1" placeholder="Marinated Marsupial">{{title}}</textarea>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="ingredients" style="color: white"><h5>Ingredients</h5></label>
+        <textarea class="form-control" name="ingredients" id="ingredients" rows="3" placeholder="tomatoes, marsupial, basil, pepper..." required>{{ingredients}}</textarea>
+    </div>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-light" onclick="this.disabled=true; this.form.submit();">
+        Generate Recipe
+    </button>
+</form>
+
+{% endif %}
